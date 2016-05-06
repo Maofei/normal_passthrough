@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="normal_passthrough"
+        name="normal_passthrough"
+        type="normal_passthrough_node"
+        output="screen">
+    <rosparam file="$(find normal_passthrough)/config/parameters.yaml"/>
+    <remap from="~point_cloud" to="incoming_points"/>
+    <remap from="~point_cloud_with_normals" to="outgoing_points"/>
+  </node>
+</launch>
